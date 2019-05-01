@@ -1,0 +1,14 @@
+<p>
+    home works!
+    </p>
+    <div >
+    <li *ngFor="let member of members"
+    [class.selected]="member === selectedMember"
+    (click)="onSelect(member)">
+    <span class="badge">{{member.id}}</span > {{member.name}}
+    </li>
+    </div>
+    <input *ngIf="selectedMember" type="text" [(value)]="selectedMember.name" >
+    
+
+    <app-detail [member]= 'selectedMember' ></app-detail>
